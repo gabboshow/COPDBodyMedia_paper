@@ -23,3 +23,9 @@ done
 
 
 convert -append ./side2/Figure2_ABCD_color_resized.jpg ./side2/Figure2_EFGH_color_resized.jpg ./side2/Figure2_ABCDEFGH_color_resized.jpg 
+
+
+
+
+
+
