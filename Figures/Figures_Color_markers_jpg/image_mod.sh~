@@ -1,0 +1,35 @@
+array=( AB CD EF GH )
+
+for (( c=0; c<=3; c++ ))
+do
+  image=${array[$c]}
+  
+  echo ${image}
+  
+#   resize images
+  convert Figure2_${image}_hourlypattern_weekdays.jpg -resize 80% ./resized/Figure2_${image}_hourlypattern_weekdays_resized.jpg
+  convert Figure2_${image}_hourlypattern_weekend.jpg -resize 80% ./resized/Figure2_${image}_hourlypattern_weekend_resized.jpg
+
+#   put side by side
+  convert +append ./resized/Figure2_${image}_hourlypattern_weekdays_resized.jpg ./resized/Figure2_${image}_hourlypattern_weekend_resized.jpg ./resized/side/Figure2_${image}_color_resized.jpg 
+
+done 
+# 
+# array=( AB CD EF GH )
+# array2=( ABCD EFGH )
+# 
+# indexfin=0
+# 
+# for (( c=0; c<=3; c+=2 ))
+# do
+#   image=${array[$c]}
+#   image2=${array[$c+1]}
+#   
+#   imagefin=${array2[$indexfin]}
+#   
+#   echo ${image}
+#   
+# #   put side by side
+#   convert +append ./resized/Figure2_${image}_hourlypattern_weekdays_resized.jpg ./resized/Figure2_${image2}_hourlypattern_weekend_resized.jpg ./resized/side/Figure2_${imagefin}_color_resized.jpg 
+# 
+# done 
